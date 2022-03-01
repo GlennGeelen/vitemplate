@@ -18,5 +18,5 @@ Daarnaast is er een opzet gemaakt voor:
 - basis Auth store
 
 ## Hoe kan ik dit template gebruiken
-Om dit template te gebruiken moet je het clonen, de git remote origin aanpassen naar je eigen repository en je bent klaar om het te gebruiken.
+Om dit template te gebruiken moet je het forken, de git remote origin aanpassen naar je eigen repository en je bent klaar om het te gebruiken.
 
