@@ -1,0 +1,11 @@
+{
+  "loggedIn": "Je bent ingelogd.",
+  "btnText": {
+    "login": "Inloggen"
+  },
+  "credsLogin": {
+    "emailPlaceholder": "e-mailadres",
+    "passwordPlaceholder": "wachtwoord",
+    "emailOrPasswordIsEmpty": "E-mailadres en/of wachtwoord is niet ingevuld."
+  }
+}
