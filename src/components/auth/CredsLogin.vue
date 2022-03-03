@@ -20,20 +20,21 @@ const login = () => {
   const creds = {email: email.value, password: password.value}
   authStore.login(creds).then(() => {
     router.push('/')
-  }).catch((loginError: string) => {
-    error.value = loginError
+  }).catch((error) => {
+    error.value = error
   })
 }
 </script>
 
 <template>
   <div class="max-w-lg mx-auto border rounded shadow-sm p-6">
-    <div v-if="error" class="border border-red-600 my-5 p-2 rounded bg-red-300 text-red-600">
+    <div v-if="error" data-test="errorMessages" class="border border-red-600 my-5 p-2 rounded bg-red-300 text-red-600">
       {{error}}
     </div>
-    <FormKit type="form" @submit="login" :submit-label="t('btnText.login')">
-      <FormKit type="text" input-class="w-full" v-model="email" :placeholder="t('credsLogin.emailPlaceholder')" />
-      <FormKit type="password" v-model="password" :placeholder="t('credsLogin.passwordPlaceholder')" />
-    </FormKit>
+    <form @submit.prevent="login()" data-test="loginForm">
+      <input type="text" data-test="emailInput" v-model="email" :placeholder="t('credsLogin.emailPlaceholder')" />
+      <input type="password" data-test="passwordInput" v-model="password" :placeholder="t('credsLogin.passwordPlaceholder')" />
+      <button type="submit">{{t('btnText.login')}}</button>
+    </form>
   </div>
 </template>

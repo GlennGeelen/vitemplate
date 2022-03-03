@@ -1,3 +1,11 @@
 {
-  "loggedIn": "You are logged in."
+  "loggedIn": "You are logged in.",
+  "btnText": {
+    "login": "Login"
+  },
+  "credsLogin": {
+    "emailPlaceholder": "e-mail address",
+    "passwordPlaceholder": "password",
+    "emailOrPasswordIsEmpty": "E-mail address and/or password is incorrect."
+  }
 }
