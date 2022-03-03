@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@formkit/themes": "^1.0.0-beta.4",
@@ -23,6 +24,7 @@
     "@vitejs/plugin-vue": "^2.2.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.2",
+    "c8": "^7.11.0",
     "happy-dom": "^2.43.1",
     "postcss": "^8.4.7",
     "tailwindcss": "^3.0.23",

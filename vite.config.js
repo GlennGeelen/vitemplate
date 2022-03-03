@@ -7,7 +7,10 @@ import vueI18n from '@intlify/vite-plugin-vue-i18n'
 export default defineConfig({
   test: {
     globals: true,
-    environment: 'happy-dom'
+    environment: 'happy-dom',
+    coverage: {
+      reporter: ['text', 'json', 'html']
+    }
   },
   resolve: {
     alias: {
