@@ -18,5 +18,9 @@ Daarnaast is er een opzet gemaakt voor:
 - basis Auth store
 
 ## Hoe kan ik dit template gebruiken
-Om dit template te gebruiken moet je het forken, de git remote origin aanpassen naar je eigen repository en je bent klaar om het te gebruiken.
+Om dit template te gebruiken kun je `git clone` doen. Daarna zal de `git remote origin` aangepast moeten worden en naar je eigen repository gezet moeten worden.
 
+```
+> git clone git@github.com:GlennGeelen/vitemplate.git
+> git remote set-url origin [url]
+```
