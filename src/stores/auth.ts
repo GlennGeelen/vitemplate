@@ -27,7 +27,7 @@ export const useAuth = defineStore('auth-store', {
           resolve()
         }).catch((error: AxiosError) => {
           localStorage.removeItem('token')
-          reject(error)
+          reject(error.response.message)
         })
       })
     },
