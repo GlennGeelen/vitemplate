@@ -5,6 +5,10 @@ import vueI18n from '@intlify/vite-plugin-vue-i18n'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  test: {
+    globals: true,
+    environment: 'happy-dom'
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
