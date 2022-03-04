@@ -21,6 +21,6 @@ Daarnaast is er een opzet gemaakt voor:
 Om dit template te gebruiken kun je `git clone` doen. Daarna zal de `git remote origin` aangepast moeten worden en naar je eigen repository gezet moeten worden.
 
 ```
-> git clone git@github.com:GlennGeelen/vitemplate.git
+> git clone [deze repo]
 > git remote set-url origin [url]
 ```
