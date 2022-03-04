@@ -25,9 +25,9 @@ export const useAuth = defineStore('auth-store', {
           localStorage.setItem('token', token)
           this.tokenHash = token
           resolve()
-        }).catch((error: AxiosError) => {
+        }).catch(() => {
           localStorage.removeItem('token')
-          reject(error.response.message)
+          reject()
         })
       })
     },
