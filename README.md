@@ -11,11 +11,13 @@ Dit is een tempalte voor een basis opzet van een Vue 3 project. Dit template in 
 - Pinia (State management) (https://pinia.vuejs.org/)
 - .env
 - FormKit (met het genesis theme) (https://formkit.com/essentials/what-is-formkit)
+- vitest + @vue/test-utils (testing)
 
 Daarnaast is er een opzet gemaakt voor:
 - Authenticated/unauthenticated routes
 - Login Component
 - basis Auth store
+- het testen van het Login component en de store
 
 ## Hoe kan ik dit template gebruiken
 Om dit template te gebruiken kun je `git clone` doen. Daarna zal de `git remote origin` aangepast moeten worden en naar je eigen repository gezet moeten worden.
