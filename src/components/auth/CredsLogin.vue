@@ -20,8 +20,8 @@ const login = () => {
   const creds = {email: email.value, password: password.value}
   authStore.login(creds).then(() => {
     router.push('/')
-  }).catch((err: string) => {
-    error.value = err
+  }).catch(() => {
+    error.value = t('credsLogin.failedLogin')
   })
 }
 </script>

@@ -45,7 +45,7 @@ describe('CredsLogin', () => {
     await form.trigger('submit')
 
     await flushPromises()
-    expect(wrapper.find('[data-test="errorMessages"]').text()).toBe('Something went wrong')
+    expect(wrapper.find('[data-test="errorMessages"]').text()).toBe('E-mailadres en/of wachtwoord is niet correct')
   })
 
   test('should redirect to home after successfull login', async () => {

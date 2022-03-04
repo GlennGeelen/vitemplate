@@ -6,6 +6,7 @@
   "credsLogin": {
     "emailPlaceholder": "e-mailadres",
     "passwordPlaceholder": "wachtwoord",
-    "emailOrPasswordIsEmpty": "E-mailadres en/of wachtwoord is niet ingevuld."
+    "emailOrPasswordIsEmpty": "E-mailadres en/of wachtwoord is niet ingevuld.",
+    "failedLogin": "E-mailadres en/of wachtwoord is niet correct"
   }
 }
