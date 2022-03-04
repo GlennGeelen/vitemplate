@@ -1,0 +1,70 @@
+# Node.js with Vue
+# Build a Node.js project that uses Vue.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
+
+# - task: SonarCloudPrepare@1
+#   displayName: 'Prepare analysis on SonarCloud'
+#   inputs:
+#     SonarCloud: SonarCloud
+#     organization: ''
+#     scannerMode: CLI
+#     extraProperties: |
+#       sonar.projectKey=
+#       sonar.projectName=
+#       sonar.sources=
+#       sonar.javascript.lcov.reportPaths=coverage/lcov.info
+
+- script: |
+    npm ci
+    npm run build
+  displayName: 'npm install and build'
+
+- script: |
+    npm run coverage
+  displayName: 'npm test and build coverage'
+
+# - task: SonarCloudAnalyze@1
+#   displayName: Run Code Analysis
+
+# - task: SonarCloudPublish@1
+#   displayName: Publish Quality Gate Result
+
+# ## Copy the client to the staging directory
+# - task: CopyFiles@2
+#   inputs:
+#     sourceFolder: '$(buildOutputFolder)' 
+#     contents: '**/*' 
+#     targetFolder: '$(Build.ArtifactStagingDirectory)'
+#     cleanTargetFolder: true
+
+# ## Archive the files into a zip file for publishing
+# - task: ArchiveFiles@2
+#   inputs:
+#     rootFolderOrFile: $(Build.ArtifactStagingDirectory)
+#     archiveType: 'zip'
+#     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+#     includeRootFolder: false
+
+# ## Publish the zip file
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     pathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+
+# - task: PublishBuildArtifacts@1
+#   displayName: 'Publish artifact to drop'
+#   inputs:
+#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#     ArtifactName: 'drop'
