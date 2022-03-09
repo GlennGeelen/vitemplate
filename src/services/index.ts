@@ -7,10 +7,12 @@ const axiosBase = create({
   }
 })
 
-axiosBase.interceptors.request.use((config: AxiosRequestConfig) => {
+export const onFullfilled = (config: AxiosRequestConfig) => {
   const token: string = localStorage.getItem('token') || ''
   if (config.headers) config.headers.Authorization = `Bearer ${token}`
   return config
-})
+}
+
+axiosBase.interceptors.request.use(onFullfilled)
 
 export default axiosBase
