@@ -19,10 +19,31 @@ Daarnaast is er een opzet gemaakt voor:
 - basis Auth store
 - het testen van het Login component en de store
 
+## Waarvoor kan ik dit template gebruiken
+Als je een Vue.js project wil opzetten voor je eigen/bestaande RESTful api en je wil geen tijd spenderen aan het connecten van bovenstaande packages, dan is dit het template dat je zoekt.
+
 ## Hoe kan ik dit template gebruiken
-Om dit template te gebruiken kun je `git clone` doen. Daarna zal de `git remote origin` aangepast moeten worden en naar je eigen repository gezet moeten worden.
+Om dit template te gebruiken kun je het clonen of forken. Daarna zal de `git remote origin` aangepast moeten worden en naar je eigen repository gezet moeten worden. 
+
+```bash
+> git clone [deze repo]
+> cd vitemplate
+> git remote set-url origin [url]
 
 ```
-> git clone [deze repo]
-> git remote set-url origin [url]
+Je kan er ook voor kiezen om de inhoud van deze repository over te zetten naar je eigen project.
+
+### Installatie, develop, test
+Dit template maakt gebruik van NPM package manager. Om de packages te installeren moet je het volgende command uitvoeren `npm i`.
+Daarna kan je de dev server starten met:
+```bash
+> npm run dev
+```
+De tests eenmalig draaien met een coverage rapport:
+```bash
+> npm run coverage
+```
+De tests in watch mode draaien:
+```bash
+> npm run test
 ```
