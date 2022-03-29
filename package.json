@@ -25,10 +25,10 @@
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.4",
     "c8": "^7.11.0",
-    "happy-dom": "^2.49.0",
+    "happy-dom": "^2.50.0",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.23",
     "vite": "^2.8.6",
-    "vitest": "^0.7.4"
+    "vitest": "^0.7.13"
   }
 }

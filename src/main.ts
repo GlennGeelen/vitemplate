@@ -7,7 +7,7 @@ import { plugin, defaultConfig } from '@formkit/vue'
 import App from '@/App.vue'
 import router from "@/router/index.ts"
 
-import '~formkit/themes/genesis/theme.css'
+import '~formkit/themes/dist/genesis/theme.css'
 
 const i18n = createI18n({
   locale: 'nl',
