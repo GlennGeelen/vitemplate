@@ -9,7 +9,10 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom',
     coverage: {
-      reporter: ['text', 'lcov']
+      reporter: ['text', 'lcov'],
+      all: true,
+      include: ['src'],
+      exclude: ['src/main.ts', 'src/*.d.ts']
     }
   },
   resolve: {

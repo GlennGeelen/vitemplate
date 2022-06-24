@@ -1,7 +1,7 @@
 import { setActivePinia, createPinia } from 'pinia'
 import { useAuth } from '@/stores/auth'
 import axiosBase from '@/services/index'
-import { AxiosError } from 'axios'
+import { Credentials } from '@/types/Credentials'
 
 describe('Auth Store', () => {
   beforeEach(() => {
@@ -17,25 +17,26 @@ describe('Auth Store', () => {
   })
 
   it('login success', async () => {
-    vi.spyOn(axiosBase, 'post').mockResolvedValueOnce(Promise.resolve({ data: { token: 'token'} }))
+    vi.spyOn(axiosBase, 'post').mockResolvedValueOnce(Promise.resolve({ data: { token: 'token' } }))
     const auth = useAuth()
     expect(auth.token).toBe('')
     expect(auth.isAuthenticated).toBe(false)
 
-    await auth.login({email: 'example@mail.com', password: 'password'})
+    const creds = new Credentials({ email: 'example@mail.com', password: 'password' })
+    await auth.login(creds)
     expect(auth.token).toBe('token')
     expect(auth.isAuthenticated).toBe(true)
   })
 
   it('login fail', async () => {
-    vi.spyOn(axiosBase, 'post').mockImplementationOnce(() => Promise.reject({response: {message: 'error'}}))
+    vi.spyOn(axiosBase, 'post').mockImplementationOnce(() => Promise.reject({ response: { message: 'error' } }))
     const auth = useAuth()
     expect(auth.token).toBe('')
     expect(auth.isAuthenticated).toBe(false)
 
     // Try/catch is necessary because of the rejected promise
     try {
-      await auth.login({email: 'example@mail.com', password: 'password'})
+      await auth.login({ email: 'example@mail.com', password: 'password' })
     } catch {
       expect(auth.token).toBe('')
       expect(auth.isAuthenticated).toBe(false)

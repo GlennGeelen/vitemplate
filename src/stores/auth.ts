@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
-import { AxiosResponse, AxiosError } from 'axios'
+import SessionRepository from '@/repositories/session'
 import { Credentials } from '@/types/Credentials'
-import axiosBase from '@/services/index'
 
 export const useAuth = defineStore('auth-store', {
   state: () => {
@@ -18,18 +17,15 @@ export const useAuth = defineStore('auth-store', {
     }
   },
   actions: {
-    login(credentials: Credentials): Promise<void> {
-      return new Promise((resolve, reject) => {
-        axiosBase.post('/login', credentials).then((response: AxiosResponse) => {
-          const token = response.data.token
-          localStorage.setItem('token', token)
-          this.tokenHash = token
-          resolve()
-        }).catch(() => {
-          localStorage.removeItem('token')
-          reject()
-        })
-      })
+    async login(credentials: Credentials): Promise<void> {
+      try {
+        const token = await SessionRepository.create(credentials)
+        localStorage.setItem('token', token)
+        this.tokenHash = token
+      } catch (error: any) {
+        localStorage.removeItem('token')
+        throw error
+      }
     },
     logout(): Promise<void> {
       return new Promise((resolve) => {

@@ -1,6 +1,6 @@
-import { create, AxiosRequestConfig } from 'axios'
+import { create, AxiosRequestConfig, AxiosInstance } from 'axios'
 
-const axiosBase = create({
+const axiosBase: AxiosInstance = create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
