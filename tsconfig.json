@@ -23,13 +23,16 @@
       "scripthost"
     ],
     "types": [
-      "@intlify/vite-plugin-vue-i18n/client"
+      "@intlify/vite-plugin-vue-i18n/client",
+      "cypress"
     ]
   },
   "include": [
+    "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
+    "cypress.d.ts",
   ],
   "exclude": [
     "node_modules"

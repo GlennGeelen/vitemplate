@@ -25,10 +25,12 @@
     "@vue/test-utils": "^2.0.0",
     "autoprefixer": "^10.4.7",
     "c8": "^7.11.3",
+    "cypress": "^10.2.0",
     "happy-dom": "^5.3.1",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.4",
     "vite": "^2.9.12",
-    "vitest": "^0.15.2"
+    "vitest": "^0.15.2",
+    "vue-tsc": "^0.34.7"
   }
 }

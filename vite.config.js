@@ -26,5 +26,5 @@ export default defineConfig({
     vueI18n({
       include: resolve(__dirname, 'src/locales/**')
     })
-  ]
+  ],
 })

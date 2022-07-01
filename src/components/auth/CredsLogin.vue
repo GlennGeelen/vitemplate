@@ -32,8 +32,8 @@ const login = () => {
       {{error}}
     </div>
     <form @submit.prevent="login()" data-test="loginForm">
-      <input type="text" data-test="emailInput" v-model="email" :placeholder="t('credsLogin.emailPlaceholder')" />
-      <input type="password" data-test="passwordInput" v-model="password" :placeholder="t('credsLogin.passwordPlaceholder')" />
+      <input type="text" name="email" data-test="emailInput" v-model="email" :placeholder="t('credsLogin.emailPlaceholder')" />
+      <input type="password" name="password" data-test="passwordInput" v-model="password" :placeholder="t('credsLogin.passwordPlaceholder')" />
       <button type="submit">{{t('btnText.login')}}</button>
     </form>
   </div>
