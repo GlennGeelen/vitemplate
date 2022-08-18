@@ -17,7 +17,7 @@ describe('CredsLogin.cy.ts', () => {
     cy.get('input[name="password"]').type('password')
     cy.contains('button', 'Inloggen').click()
 
-    cy.url().should('eq', 'http://localhost:3000/')
+    cy.url().should('eq', 'http://localhost:5173/')
   })
 
   it('fails to login the user without email', () => {
@@ -27,7 +27,7 @@ describe('CredsLogin.cy.ts', () => {
     cy.contains('button', 'Inloggen').click()
     cy.contains('[data-test="errorMessages"]', 'E-mailadres en/of wachtwoord is niet ingevuld.')
 
-    cy.url().should('eq', 'http://localhost:3000/login')
+    cy.url().should('eq', 'http://localhost:5173/login')
   })
 
   it('fails to login the user with wrong creds', () => {
@@ -44,6 +44,6 @@ describe('CredsLogin.cy.ts', () => {
     cy.contains('button', 'Inloggen').click()
 
     cy.contains('[data-test="errorMessages"]', 'E-mailadres en/of wachtwoord is niet correct')
-    cy.url().should('eq', 'http://localhost:3000/login')
+    cy.url().should('eq', 'http://localhost:5173/login')
   })
 })

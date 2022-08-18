@@ -28,13 +28,34 @@ const login = () => {
 
 <template>
   <div class="max-w-lg mx-auto border rounded shadow-sm p-6">
-    <div v-if="error" data-test="errorMessages" class="border border-red-600 my-5 p-2 rounded bg-red-300 text-red-600">
-      {{error}}
+    <div
+      v-if="error"
+      data-test="errorMessages"
+      class="border border-red-600 my-5 p-2 rounded bg-red-300 text-red-600"
+    >
+      {{ error }}
     </div>
-    <form @submit.prevent="login()" data-test="loginForm">
-      <input type="text" name="email" data-test="emailInput" v-model="email" :placeholder="t('credsLogin.emailPlaceholder')" />
-      <input type="password" name="password" data-test="passwordInput" v-model="password" :placeholder="t('credsLogin.passwordPlaceholder')" />
-      <button type="submit">{{t('btnText.login')}}</button>
+    <form
+      data-test="loginForm"
+      @submit.prevent="login()"
+    >
+      <input
+        v-model="email"
+        type="text"
+        name="email"
+        data-test="emailInput"
+        :placeholder="t('credsLogin.emailPlaceholder')"
+      >
+      <input
+        v-model="password"
+        type="password"
+        name="password"
+        data-test="passwordInput"
+        :placeholder="t('credsLogin.passwordPlaceholder')"
+      >
+      <button type="submit">
+        {{ t('btnText.login') }}
+      </button>
     </form>
   </div>
 </template>

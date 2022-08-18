@@ -15,11 +15,15 @@ const logout = () => {
 </script>
 
 <template>
-  <h1 class="text-2xl font-bold">Home</h1>
+  <h1 class="text-2xl font-bold">
+    Home
+  </h1>
 
   <p v-if="authStore.token">
-    {{t('loggedIn')}}
+    {{ t('loggedIn') }}
 
-    <button @click="logout()">Uitloggen</button>
+    <button @click="logout()">
+      Uitloggen
+    </button>
   </p>
 </template>

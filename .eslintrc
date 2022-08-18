@@ -1,0 +1,19 @@
+{
+  "root": true,
+  "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "@vue/typescript/recommended"
+  ],
+  "plugins": [
+  ],
+  "rules": {
+    "no-useless-catch": "off",
+    "vue/multi-word-component-names": "warn"
+  }
+}
